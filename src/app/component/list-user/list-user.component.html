@@ -1,0 +1,13 @@
+<h1>Users</h1>
+<div>
+<ul>
+  <li *ngFor="let user of user$ | sortBy: 'name' : false">
+    <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
+    <ul>
+      <li>{{ user.email }}</li>
+      <div class="contact" (click)="getUserDetails(user)">
+        <li id="user_site">{{ user.id }}</li>
+      </div>
+    </ul>
+  </li>
+</ul>

@@ -1,0 +1,29 @@
+<div class="member-form">
+  <form class="login100-form validate-form form" [formGroup]="userForm" (ngSubmit)="addUser()" autocomplete="off">
+    <div class="wrap-input100 validate-input m-b-26 form-group">
+      <span class="label-input100">Email</span>
+      <input class="input100" type="text" placeholder="Enter Email address" formControlName="email">
+      <span class="focus-input100"></span>
+    </div>
+    <div *ngIf="userForm.controls['email'].errors && (userForm.touched || userForm.dirty)" class="error">
+      <div *ngIf="userForm.controls['email'].errors.required">Email address is required</div>
+    </div>
+    <div *ngIf="userForm.controls['email'].errors?.pattern" class="error">
+        Employee ID not valid
+    </div>
+
+    <div class="wrap-input100 validate-input m-b-18 form-group">
+      <span class="label-input100">Name</span>
+      <input class="input100" type="text" name="pass" placeholder="Enter your Name" formControlName="name">
+      <span class="focus-input100"></span>
+    </div>
+    <div *ngIf="userForm.controls['name'].errors && (userForm.touched || userForm.dirty)" class="error">
+      <div *ngIf="userForm.controls['name'].errors.required">Password is required</div>
+    </div>
+    <div class="container-login100-form-btn">
+      <button type="submit" class="login100-form-btn">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
