@@ -1,14 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" routerLink="">User List <span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/add-user">Add User</a>
+        <a class="nav-link" routerLink="user/add-user">Add User</a>
       </li>
     </ul>
-    <!-- <ul class="form-inline my-2 my-lg-0">
+    <ul class="form-inline my-2 my-lg-0">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sort User
@@ -18,6 +18,26 @@
           <a class="dropdown-item" href="#">Descending</a>
         </div>
       </li>
-    </ul> -->
+    </ul> 
   </div>
-</nav>
+</nav> -->
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav mr-auto">
+        <span class="nav-item active" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+          <div class="nav-link" routerLink="">
+            Users
+          </div>
+        </span>
+        <span class="nav-item" routerLinkActive="highlight">
+          <div class="nav-link" routerLink="user/add-user">
+            Add User
+          </div>
+        </span>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

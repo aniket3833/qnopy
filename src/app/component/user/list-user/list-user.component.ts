@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { Observable, Observer } from 'rxjs';
@@ -10,6 +10,7 @@ import { Observable, Observer } from 'rxjs';
   styleUrls: ['./list-user.component.scss']
 })
 export class ListUserComponent implements OnInit {
+  
   user$: any;
   error: any;
   order = 'name';
@@ -29,10 +30,10 @@ export class ListUserComponent implements OnInit {
     });
   }
 
-  getUserDetails(user) {
+  getUserDetails(user: any) {
     this.userService.getUser(user.id).subscribe(res => {
       console.log('User: '+ res);
-      this.router.navigateByUrl('/details/' + user.id, {state: {name: user.name, id: user.id, email: user.email}});
+      this.router.navigateByUrl('/details/' + user.id, {state: user});
     });
   }
 }

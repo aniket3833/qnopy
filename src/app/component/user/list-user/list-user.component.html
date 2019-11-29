@@ -1,0 +1,27 @@
+<!-- <h1>Users</h1>
+<div>
+<ul>
+  <li *ngFor="let user of user$ | sortBy: 'name' : false">
+    <a [routerLink]="['/user/details', user.id]" [state]="user">{{ user.name }}</a>
+    <ul>
+      <li>{{ user.email }}</li>
+      <div class="contact" (click)="getUserDetails(user)">
+        <li id="user_site">{{ user.id }}</li>
+      </div>
+    </ul>
+  </li>
+</ul> -->
+
+
+<mat-list *ngFor="let user of user$ | sortBy: 'name' : false">
+  <mat-card matRipple>
+    <mat-list-item>
+      <mat-icon mat-list-icon>account_circle</mat-icon>
+      <mat-card-header>
+        <mat-card-title> {{ user.name }} </mat-card-title>
+        <mat-card-subtitle mat-line> {{ user.email }} </mat-card-subtitle>
+      </mat-card-header>
+    </mat-list-item>
+  </mat-card>
+</mat-list>
+<router-outlet></router-outlet>
