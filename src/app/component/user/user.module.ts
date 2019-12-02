@@ -14,7 +14,10 @@ import {
   MatIconModule,
   MatListModule,
   MatRippleModule,
-  MatDividerModule
+  MatDividerModule,
+  MatFormFieldModule,
+  MatButtonModule,
+  MatInputModule
 } from '@angular/material';
 
 @NgModule({
@@ -34,7 +37,10 @@ import {
     MatIconModule,
     MatListModule,
     MatRippleModule,
-    MatDividerModule
+    MatDividerModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [
     UserService
